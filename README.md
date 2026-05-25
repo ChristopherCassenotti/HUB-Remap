@@ -10,10 +10,10 @@ O **HUB Remap** é um dashboard corporativo construído com uma arquitetura híb
 
 O sistema funciona como uma central inteligente de gestão, permitindo:
 
-* Controlo completo de tarefas e subtarefas
+* Controle completo de tarefas e subtarefas
 * Gestão de metas e pontuações
 * Monitoramento de desempenho da equipa
-* Integração visual com dashboards do ClickUp
+* Integração visual com dashboards do ClickUp por links de compartilhamento (em breve intregração via API)
 * Atualização automática em tempo real
 * Persistência híbrida com sincronização contínua
 
@@ -36,7 +36,7 @@ O estado da aplicação é mantido em memória e sincronizado continuamente com 
 
 ## Gestão Completa de Tarefas
 
-Sistema avançado para controlo do ciclo de vida das tarefas.
+Sistema avançado para controle do ciclo de vida das tarefas.
 
 ### Recursos disponíveis:
 
