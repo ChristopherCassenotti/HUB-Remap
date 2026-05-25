@@ -1,0 +1,68 @@
+# Arquivos de ambiente / credenciais
+.env
+.env.local
+.env.production
+.env.development
+
+# Exemplo permitido
+!.env.example
+
+# Logs
+*.log
+logs/
+error_log
+debug.log
+
+# Backups
+*.zip
+*.rar
+*.tar
+*.gz
+*.bak
+*.backup
+backup/
+backups/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node / dependências JS, caso use no futuro
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Composer / dependências PHP, caso use no futuro
+vendor/
+composer.lock
+
+# Cache / arquivos temporários
+.cache/
+tmp/
+temp/
+*.tmp
+
+# Uploads temporários
+uploads/tmp/
+uploads/temp/
+
+# Arquivos de build
+dist/
+build/
+
+# Banco de dados local / dumps
+*.sql
+*.sqlite
+*.db
+
+# Arquivos sensíveis de configuração antiga
+# Use somente se ainda tiver senha direto no config.php
+# api/config.php
