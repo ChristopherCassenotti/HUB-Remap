@@ -1,204 +1,257 @@
 # HUB Remap
 
-Sistema interno de gestão e produtividade desenvolvido para centralizar tarefas, metas, desempenho da equipa e integrações externas com o ClickUp, oferecendo sincronização em tempo real, visualização analítica e controlo operacional unificado.
+Sistema interno de gestão e produtividade desenvolvido para centralizar tarefas, metas, desempenho da equipe e integrações visuais com o ClickUp.
+
+O projeto foi criado para apoiar a operação interna da Remap, reunindo em um único ambiente o controle de tarefas, acompanhamento de produtividade, visualização de indicadores e sincronização de dados com backend em PHP e MySQL.
 
 ---
 
-# Visão Geral
+## Visão geral
 
-O **HUB Remap** é um dashboard corporativo construído com uma arquitetura híbrida baseada em **Vanilla JavaScript**, **PHP** e **MySQL**, focado em desempenho, sincronização instantânea de dados e experiência fluida para equipas operacionais.
+O **HUB Remap** é um dashboard corporativo desenvolvido com **HTML, CSS, JavaScript, PHP e MySQL**, com foco em organização operacional, performance e atualização contínua dos dados.
 
-O sistema funciona como uma central inteligente de gestão, permitindo:
-
-* Controle completo de tarefas e subtarefas
-* Gestão de metas e pontuações
-* Monitoramento de desempenho da equipa
-* Integração visual com dashboards do ClickUp por links de compartilhamento (em breve intregração via API)
-* Atualização automática em tempo real
-* Persistência híbrida com sincronização contínua
+A plataforma funciona como uma central de gestão para equipes, permitindo acompanhar atividades, metas, pontuações, clientes, tarefas e visualizações externas do ClickUp de forma prática e integrada.
 
 ---
 
-# Funcionalidades Principais
+## Funcionalidades principais
 
-## Sincronização em Tempo Real (API Bridge)
+### Gestão de tarefas
 
-O estado da aplicação é mantido em memória e sincronizado continuamente com o backend através de APIs PHP.
+O sistema permite controlar tarefas e subtarefas com recursos como:
 
-### Características:
+- Responsáveis
+- Prioridades
+- Etiquetas
+- Comentários
+- Anexos
+- Subtarefas
+- Status personalizados
+- Recorrências
+- Organização por colunas
 
-* Atualização instantânea entre frontend e banco de dados
-* Persistência temporária utilizando `LocalStorage`
-* Gestão segura de tokens e sessão
-* Sincronização desacoplada da interface
-
----
-
-## Gestão Completa de Tarefas
-
-Sistema avançado para controle do ciclo de vida das tarefas.
-
-### Recursos disponíveis:
-
-* Subtarefas
-* Comentários
-* Anexos
-* Responsáveis
-* Etiquetas
-* Prioridades
-* Recorrências
-* Estados personalizados
-
-Os modais são totalmente dinâmicos e construídos em JavaScript puro, garantindo alta performance e flexibilidade.
+Os modais e ações da interface são construídos em JavaScript puro, garantindo flexibilidade e boa performance.
 
 ---
 
-## Integração com ClickUp
+### Sincronização com backend
 
-Integração visual com dashboards e linhas editoriais do ClickUp através de iframes otimizados.
+A aplicação utiliza APIs em PHP para salvar, buscar e atualizar os dados no banco MySQL.
 
-### Recursos:
+Entre os recursos de sincronização estão:
 
-* Embeds responsivos
-* Compatibilidade com Dark Mode
-* Filtros visuais automáticos
-* Navegação integrada ao HUB
-
----
-
-## Auto-Update Inteligente
-
-O sistema monitora alterações no banco de dados em segundo plano utilizando polling inteligente.
-
-### Diferenciais:
-
-* Atualização automática da interface
-* Pausa temporária durante digitação
-* Suspensão automática com modais abertos
-* Melhor experiência de utilização
-* Redução de conflitos de estado
+- Salvamento de tarefas
+- Atualização de estados da aplicação
+- Consulta de alterações no banco
+- Persistência de clientes, metas, colunas, pontos e descontos
+- Comunicação entre frontend e backend por endpoints REST
 
 ---
 
-## Métricas e Visualização de Dados
+### Atualização automática
 
-Integração com **Chart.js** para exibição de métricas em tempo real.
+O HUB conta com uma rotina de atualização em segundo plano, usando polling inteligente para manter a interface sincronizada com o banco de dados.
 
-### Indicadores:
+O sistema foi pensado para reduzir conflitos durante o uso, evitando atualizações em momentos sensíveis, como:
 
-* Desempenho da equipa
-* Metas atingidas
-* Evolução operacional
-* Pontuações
-* Estatísticas gerais
+- Durante digitação
+- Com modais abertos
+- Durante interações importantes do usuário
 
 ---
 
-# Arquitetura do Projeto
+### Integração visual com ClickUp
 
-```plaintext
+O projeto possui suporte para visualizações públicas do ClickUp por meio de iframes e links de compartilhamento.
+
+Essa integração permite centralizar dentro do HUB visualizações como:
+
+- Linha editorial
+- Criação
+- Aprovação interna
+- Copy
+- Aprovação do cliente
+- Programação
+- Otimização de tráfego
+- Agenda de gravações
+
+A integração via API do ClickUp está prevista como evolução futura.
+
+---
+
+### Métricas e indicadores
+
+O sistema também foi planejado para exibir dados operacionais e de produtividade, como:
+
+- Desempenho da equipe
+- Metas atingidas
+- Pontuações
+- Estatísticas gerais
+- Evolução operacional
+- Comparativos por cliente e colaborador
+
+---
+
+## Stack utilizada
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript Vanilla
+- CSS Variables
+
+### Backend
+
+- PHP
+- APIs REST
+
+### Banco de dados
+
+- MySQL
+
+### Bibliotecas
+
+- Chart.js
+
+---
+
+## Estrutura do projeto
+
+```bash
 ├── api/
-│   ├── check_updates.php      # Verificação de alterações em segundo plano
-│   ├── full_state.php         # Sincronização global do sistema
-│   ├── state.php              # Estados voláteis individuais
-│   └── sync.php               # Persistência direta das tarefas
+│   ├── check_updates.php
+│   ├── clientes.php
+│   ├── colunas.php
+│   ├── config.php
+│   ├── descontos.php
+│   ├── full_state.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── metas.php
+│   ├── ping.php
+│   ├── pontos_tarefas.php
+│   ├── state.php
+│   ├── sync.php
+│   ├── tarefas.php
+│   ├── timer.php
+│   └── usuarios.php
 │
-├── js/
-│   ├── api-bridge.js          # Ponte principal de sincronização
-│   ├── clickup-views.js       # Configuração de embeds e iframes
-│   ├── modal-actions.js       # Gestão de ações dos modais
-│   ├── db-bridge.js           # Comunicação completa com MySQL
-│   ├── task-db-save.js        # Salvamento direto de tarefas
-│   └── auto-update.js         # Polling inteligente
+├── database/
+│   └── arquivos SQL do projeto
 │
-├── index.html                 # Interface principal
-├── remap.png                  # Ícone/Favicon do sistema
-└── .gitignore                 # Arquivos ignorados no Git
+├── api-bridge.js
+├── auto-update.js
+├── clickup-views.js
+├── db-bridge.js
+├── direct-save.js
+├── index.html
+├── modal-actions.js
+├── remap.png
+├── .gitignore
+└── README.md
 ```
 
 ---
 
-# Stack Tecnológica
+## Fluxo de funcionamento
 
-## Frontend
-
-* HTML5
-* CSS3
-* Vanilla JavaScript (ES6+)
-* CSS Variables (Custom Properties)
-
-## Backend
-
-* PHP (REST API)
-
-## Banco de Dados
-
-* MySQL
-
-## Bibliotecas
-
-* Chart.js (via CDN)
-
----
-
-# Fluxo de Funcionamento
-
-```plaintext
-Frontend (JS)
-      ↓
-API Bridge
-      ↓
-PHP REST API
-      ↓
-MySQL Database
-      ↑
+```bash
+Frontend
+   ↓
+JavaScript Bridge
+   ↓
+API PHP
+   ↓
+Banco MySQL
+   ↑
 Auto Update / Polling
 ```
 
 ---
 
-# Objetivos do Projeto
+## Objetivos do projeto
 
 O HUB Remap foi desenvolvido para:
 
-* Centralizar operações internas
-* Melhorar produtividade da equipa
-* Reduzir retrabalho operacional
-* Automatizar sincronização de estados
-* Facilitar acompanhamento de metas
-* Integrar visualmente ferramentas externas
+- Centralizar operações internas
+- Organizar tarefas e fluxos da equipe
+- Acompanhar metas e produtividade
+- Reduzir retrabalho operacional
+- Facilitar a visualização de dados
+- Integrar ferramentas externas em um só ambiente
+- Melhorar o controle da operação em tempo real
 
 ---
 
-# Persistência e Performance
+## Requisitos
 
-A arquitetura foi desenhada para priorizar:
+Para executar o projeto, é necessário ter:
 
-* Baixa latência
-* Atualizações instantâneas
-* Persistência segura
-* Redução de recarregamentos
-* Experiência fluida em tempo real
-
----
-
-# Futuras Implementações
-
-* Sistema de notificações em tempo real
-* WebSockets para sincronização instantânea
-* Permissões e níveis de acesso
-* Logs de atividade
-* Dashboard analítico avançado
-* Integração com APIs externas adicionais
+- Servidor com suporte a PHP
+- Banco de dados MySQL
+- Navegador moderno
+- Configuração correta do arquivo `api/config.php`
+- Importação das tabelas SQL disponíveis na pasta `database/`
 
 ---
 
-# Desenvolvimento
+## Como executar
 
-Projeto desenvolvido com foco em:
+1. Clone o repositório:
 
-* Escalabilidade
-* Organização modular
-* Performance
-* Manutenibilidade
-* Arquitetura desacoplada
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+2. Envie os arquivos para um servidor com suporte a PHP.
+
+3. Importe o banco de dados MySQL usando os arquivos da pasta `database/`.
+
+4. Configure as credenciais de conexão no arquivo:
+
+```bash
+api/config.php
+```
+
+5. Acesse o sistema pelo navegador:
+
+```bash
+https://seudominio.com.br/
+```
+
+---
+
+## Segurança
+
+Este projeto utiliza APIs internas e conexão com banco de dados. Por isso, recomenda-se:
+
+- Não versionar arquivos com senhas reais
+- Manter `api/config.php` protegido
+- Utilizar variáveis de ambiente quando possível
+- Restringir acesso ao sistema por autenticação
+- Evitar exposição pública de endpoints sensíveis
+
+---
+
+## Futuras implementações
+
+- Sistema de notificações em tempo real
+- WebSockets para sincronização instantânea
+- Permissões avançadas por nível de acesso
+- Logs de atividade
+- Dashboard analítico avançado
+- Integração com API do ClickUp
+- Melhorias no controle de tarefas e produtividade
+
+---
+
+## Status do projeto
+
+Projeto em desenvolvimento e evolução contínua.
+
+---
+
+## Desenvolvimento
+
+Desenvolvido pela **Remap Digital** com foco em performance, organização modular, escalabilidade e controle operacional interno.
