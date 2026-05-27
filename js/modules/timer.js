@@ -417,10 +417,20 @@ function formatTimerPoints(value) {
 }
 
 function calculateTimerPointsByMode(basePoints, durationSeconds, mode) {
-  const base = Number(basePoints || 0);
-  if (normalizeTimerPointMode(mode) !== 'time_30m') return base;
-  const completedBlocks = Math.floor(Math.max(0, Number(durationSeconds || 0)) / 1800);
-  const total = base + (completedBlocks * (base * 0.5));
+  const base = Math.max(0, Number(basePoints || 0));
+
+  if (normalizeTimerPointMode(mode) !== 'time_30m') return Math.round(base * 10) / 10;
+
+  const duration = Math.max(0, Number(durationSeconds || 0));
+
+  if(durationSeconds < 1800){
+    return Math.round((base * 10) / 10)
+  }
+
+  const completedBlocks = Math.floor(duration / 1800);
+
+  const total = (completedBlocks * (base * 0.5));
+
   return Math.round(total * 10) / 10;
 }
 

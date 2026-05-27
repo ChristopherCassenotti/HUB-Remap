@@ -206,11 +206,19 @@ function remapNormalizePointMode($mode) {
 
 function remapCalculateTimerPoints($basePoints, $pointMode, $durationSeconds) {
   $base = max(0, (float)$basePoints);
-  if (remapNormalizePointMode($pointMode) !== "time_30m") return $base;
 
+  if (remapNormalizePointMode($pointMode) !== "time_30m") return $base;
+  
+  if($durationSeconds < 1800){
+    return round($base,1);
+  }
+  
   $completedBlocks = floor(max(0, (int)$durationSeconds) / 1800);
-  $total = $base + ($completedBlocks * ($base * 0.5));
+  
+  $total = ($completedBlocks * ($base * 0.5));
+   
   return round($total, 1);
+  
 }
 
 function remapInsertFinalTimer($pdo, $timer, $duracaoFinal, $fim) {
