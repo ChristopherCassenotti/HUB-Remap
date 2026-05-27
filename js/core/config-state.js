@@ -26,15 +26,22 @@ const CLICKUP_PUBLIC_VIEWS = [
   { id:'programarPostado',      group:'Social Media', icon:'»', label:'Programar - Postado',      url:'https://sharing.clickup.com/36978565/l/138fw5-16953/postado' },
   { id:'criacaoArtes',          group:'Design',       icon:'»', label:'Criação - Artes',          url:'https://sharing.clickup.com/36978565/l/6-901326591202-1/criaodeartes' },
   { id:'criacaoVideos',         group:'Design',       icon:'»', label:'Criação - Vídeos',         url:'https://sharing.clickup.com/36978565/l/138fw5-16973/videosaeditar' },
-  { id:'otimizacao',            group:'Tráfego Pago', icon:'⌁', label:'Otimização',               url:'https://sharing.clickup.com/36978565/l/138fw5-8293/geral' },
-  { id:'newAgenda',             group:'Gravações',    icon:'⌁', label:'New Agenda',               url:'https://sharing.clickup.com/36978565/l/6-901326697305-1/geral' }
+  { id:'otimizacao',            group:'Tráfego Pago', icon:'»', label:'Otimização',               url:'https://sharing.clickup.com/36978565/l/138fw5-8293/geral' },
+  { id:'newAgenda',             group:'Gravações',    icon:'»', label:'New Agenda',               url:'https://sharing.clickup.com/36978565/l/6-901326697305-1/geral' }
 ];
 
+const CLICKUP_GROUP_HEAD_CLASSES = {
+  'Social Media': 'head-social-media',
+  'Design': 'head-design',
+  'Tráfego Pago': 'head-trafego',
+  'Gravações': 'head-gravacoes'
+};
+
 const CLICKUP_GROUP_ICONS = {
-  'Social Media':'📁',
-  'Design':'📁',
-  'Tráfego Pago':'📁',
-  'Gravações':'▾'
+  'Social Media':'<i class="bi bi-folder"></i>',
+  'Design':'<i class="bi bi-folder"></i>',
+  'Tráfego Pago':'<i class="bi bi-folder"></i>',
+  'Gravações':'<i class="bi bi-folder"></i>'
 };
 
 const COLLAB_AVATARS = {

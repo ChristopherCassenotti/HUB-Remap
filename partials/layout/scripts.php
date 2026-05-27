@@ -1,16 +1,16 @@
 <!-- CORE -->
 <script src="js/core/api-bridge.js?v=4" defer></script>
-<script src="js/core/config-state.js?v=4" defer></script>
+<script src="js/core/config-state.js?v=5" defer></script>
 <script src="js/core/utils.js?v=4" defer></script>
 
 <!-- MODULES -->
-<script src="js/modules/points-system.js?v=4" defer></script>
+<script src="js/modules/points-system.js?v=7" defer></script>
 <script src="js/modules/seed.js?v=4" defer></script>
 <script src="js/modules/auth.js?v=4" defer></script>
 <script src="js/modules/navigation.js?v=4" defer></script>
-<script src="js/modules/timer.js?v=4" defer></script>
-<script src="js/modules/retroactive.js?v=4" defer></script>
-<script src="js/modules/supervision-panel.js?v=4" defer></script>
+<script src="js/modules/timer.js?v=6" defer></script>
+<script src="js/modules/retroactive.js?v=5" defer></script>
+<script src="js/modules/supervision-panel.js?v=5" defer></script>
 <script src="js/modules/tasks-kanban.js?v=4" defer></script>
 <script src="js/modules/export.js?v=4" defer></script>
 

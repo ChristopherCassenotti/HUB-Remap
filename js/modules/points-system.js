@@ -373,7 +373,7 @@ function renderDesempenho() {
 
   if (isNoMeta) {
     // No meta for Renan, Jéssica, Gustavo
-    metaBox.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted)"><div style="font-size:32px;margin-bottom:10px">📊</div><p>Acompanhe suas horas e tarefas registradas acima.</p></div>`;
+    metaBox.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted)"><div style="font-size:32px;margin-bottom:10px"><i class="bi bi-pie-chart"></i></div><p>Acompanhe suas horas e tarefas registradas acima.</p></div>`;
   } else if (isMarioSuper) {
     // Mario: show group-derived meta
     const groupResult = getMarioGroupLevel(mk);
@@ -398,7 +398,7 @@ function renderDesempenho() {
           </div>`).join('')}
       </div>`;
   } else if (!myMeta) {
-    metaBox.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted)"><div style="font-size:32px;margin-bottom:10px">🎯</div><p>Nenhuma meta definida para este mês.<br>Aguarde a definição pelo Diretor.</p></div>`;
+    metaBox.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted)"><div style="font-size:32px;margin-bottom:10px"><i class="bi bi-bar-chart-fill" style="color:#E23D6C"></i></div><p>Nenhuma meta definida para este mês.<br>Aguarde a definição pelo Diretor.</p></div>`;
   } else {
     const { m1, m2, m3 } = nivel;
     const goals = [
@@ -501,7 +501,7 @@ function renderDesempenho() {
           <td style="color:var(--muted-2)">${esc(e.task)}</td>
           <td><span class="pts-badge blue">${formatPoints(getEntryPoints(e,currentUser.role))} pts</span></td>
         </tr>`).join('')
-    : `<tr><td colspan="4"><div class="empty"><div class="ei">📋</div>Nenhuma tarefa este mês.</div></td></tr>`;
+    : `<tr><td colspan="4"><div class="empty"><div class="ei"><i class="bi bi-clipboard-minus"></i></div>Nenhuma tarefa este mês.</div></td></tr>`;
 }
 
 function renderEquipeDesempenho() {
@@ -996,7 +996,7 @@ async function saveMeta() {
 function renderDescontosTable() {
   const descontos = getDescontos();
   const tbody = document.getElementById('descontosTable');
-  if (!descontos.length) { tbody.innerHTML = `<tr><td colspan="5"><div class="empty"><div class="ei">✅</div>Nenhum desconto aplicado.</div></td></tr>`; return; }
+  if (!descontos.length) { tbody.innerHTML = `<tr><td colspan="5"><div class="empty"><div class="ei"><i class="bi bi-check-square"></i></div>Nenhum desconto aplicado.</div></td></tr>`; return; }
   tbody.innerHTML = descontos.slice().reverse().map(d => `
     <tr class="desconto-row">
       <td>${new Date(d.date).toLocaleDateString('pt-BR')}</td>

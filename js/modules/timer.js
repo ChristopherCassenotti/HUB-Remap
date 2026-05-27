@@ -833,14 +833,14 @@ function renderActiveTimers() {
           <div style="min-width:0">
             <div class="multi-timer-title">${esc(t.client || 'Sem cliente')}</div>
             <div class="multi-timer-sub">${esc(t.task || 'Sem tarefa')}</div>
-            <div class="multi-timer-sub" id="mt-points-${esc(timerId)}">⭐ ${formatTimerPoints(currentPoints)} pts • ${esc(pointModeLabel)}</div>
+            <div class="multi-timer-sub" id="mt-points-${esc(timerId)}"><i class="bi bi-star"></i> ${formatTimerPoints(currentPoints)} pts • ${esc(pointModeLabel)}</div>
             <span class="multi-timer-status ${statusClass}">${statusLabel}</span>
           </div>
           <div class="multi-timer-time" id="mt-elapsed-${esc(timerId)}">${formatDuration(getMultiTimerElapsedSeconds(t), true)}</div>
         </div>
         <div class="multi-timer-actions">
           ${mainAction}
-          <button type="button" class="btn-dark js-mt-action" data-action="edit" data-id="${esc(timerId)}">✏️ Editar</button>
+          <button type="button" class="btn-dark js-mt-action" data-action="edit" data-id="${esc(timerId)}"><i class="bi bi-pen" style="color:#eeeeee;"></i> Editar</button>
           <button type="button" class="btn-red js-mt-action" data-action="finish" data-id="${esc(timerId)}" ${t.saving ? 'disabled' : ''}>${t.saving ? 'Salvando...' : '⏹ Finalizar'}</button>
           <button type="button" class="btn-dark js-mt-action" data-action="cancel" data-id="${esc(timerId)}">Cancelar</button>
         </div>
@@ -1280,7 +1280,7 @@ function renderMyWork() {
 
   const tbody = document.getElementById('myWorkTable');
   if (!myEntries.length) {
-    tbody.innerHTML = `<tr><td colspan="9"><div class="empty"><div class="ei">📋</div>Nenhuma tarefa registrada ainda.</div></td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="9"><div class="empty"><div class="ei"><i class="bi bi-clipboard-minus"></i></div>Nenhuma tarefa registrada ainda.</div></td></tr>`;
     return;
   }
   tbody.innerHTML = myEntries.map(e => {
@@ -1296,9 +1296,9 @@ function renderMyWork() {
       <td>
         <div style="display:flex;align-items:center;gap:6px">
           <span class="pts-badge blue" id="pts-label-${e.id}">${formatPoints(pts)} pts</span>
-          <button onclick="editEntryPoints('${e.id}',${Number(pts) || 0})" style="background:transparent;border:1px solid var(--border);border-radius:6px;padding:3px 7px;cursor:pointer;color:var(--muted);width:auto;font-size:11px" title="Editar pontos">✏️</button>
+          <button onclick="editEntryPoints('${e.id}',${Number(pts) || 0})" style="background:transparent;border:1px solid var(--border);border-radius:6px;padding:3px 7px;cursor:pointer;color:var(--muted);width:auto;font-size:11px" title="Editar pontos"><i class="bi bi-pen" style="color:#eeeeee;"></i></button>
           <button style="background:transparent;border:1px solid var(--border);border-radius:6px;padding:3px 7px;cursor:pointer;color:var(--muted);width:auto;font-size:11px" onclick="deleteWorkEntry('${e.id}')">
-  🗑️
+  <i class="bi bi-trash" style="color:#f42b2b;"></i>
 </button>
         </div>
       </td>

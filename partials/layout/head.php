@@ -14,7 +14,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="remap.png" />
-    <link rel="stylesheet" href="assets/css/hub.css" />
+    <link rel="stylesheet" href="assets/css/hub.css?v=5" />
 
 </head>
 

@@ -493,7 +493,7 @@ function renderRetroTable() {
       <tr>
         <td colspan="7">
           <div class="empty" style="padding:20px">
-            <div class="ei">📝</div>
+            <div class="ei"><i class="bi bi-journal-plus"></i></div>
             Nenhum registro adicionado ainda.
           </div>
         </td>

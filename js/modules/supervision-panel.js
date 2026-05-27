@@ -174,7 +174,7 @@ function renderSupervisaoMemberEntries() {
 
   const tbody = document.getElementById('supervisaoMemberTable');
   if (!entries.length) {
-    tbody.innerHTML = `<tr><td colspan="7"><div class="empty"><div class="ei">📋</div>Nenhuma tarefa registrada.</div></td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7"><div class="empty"><div class="ei"><i class="bi bi-clipboard-minus"></i></div>Nenhuma tarefa registrada.</div></td></tr>`;
     return;
   }
   tbody.innerHTML = entries.map(e => {
@@ -187,7 +187,7 @@ function renderSupervisaoMemberEntries() {
       <td>${formatDuration(e.durationSeconds)}</td>
       <td><span class="pts-badge blue" id="spts-${e.id}">${formatPointsValue(pts)} pts</span></td>
       <td>
-        <button class="btn-dark btn-sm" onclick="openEditEntryModal('${e.id}','${esc(e.task)}',${Number(pts)||0},'${esc(e.taskDesc||'')}')" style="font-size:11px;padding:5px 10px">✏️ Editar</button>
+        <button class="btn-dark btn-sm" onclick="openEditEntryModal('${e.id}','${esc(e.task)}',${Number(pts)||0},'${esc(e.taskDesc||'')}')" style="font-size:11px;padding:5px 10px"><i class="bi bi-pen" style="color:#eeeeee;"></i> Editar</button>
       </td>
     </tr>`;
   }).join('');
@@ -492,7 +492,7 @@ function renderClickupViewer(containerId, activeId) {
   }, {});
   const nav = Object.entries(groups).map(([group, items]) => `
     <div class="clickup-group">
-      <div class="clickup-group-head"><span>${CLICKUP_GROUP_ICONS[group] || '📁'} ${esc(group)}</span><span>•••</span></div>
+      <div class="clickup-group-head ${CLICKUP_GROUP_HEAD_CLASSES[group] || ''}"><span>${CLICKUP_GROUP_ICONS[group] || '📁'} ${esc(group)}</span><span>•••</span></div>
       ${items.map(item => `
         <div class="clickup-option ${item.id === activeId ? 'active' : ''}" onclick="setClickupView('${item.id}')">
           <span class="clickup-option-left">

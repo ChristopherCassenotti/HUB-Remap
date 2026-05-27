@@ -1,7 +1,7 @@
 function seedDemoData() {
   const clients = [
   { id: 'cl001', name: "Balbicar", value: '800', hours: '0', notes: '' },
-  { id: 'cl002', name: "Coara Ve\u00edculos", value: '700', hours: '0', notes: '' },
+  { id: 'cl002', name: "Ceara Ve\u00edculos", value: '700', hours: '0', notes: '' },
   { id: 'cl003', name: "Fabkar", value: '500', hours: '0', notes: '' },
   { id: 'cl004', name: "Krebs Clean", value: '600', hours: '0', notes: '' },
   { id: 'cl005', name: "Premier", value: '600', hours: '0', notes: '' },
@@ -11,7 +11,7 @@ function seedDemoData() {
   { id: 'cl009', name: "Woldam", value: '1100', hours: '0', notes: '' },
   { id: 'cl010', name: "Hosp. Vet. Santa Maria", value: '597', hours: '0', notes: '' },
   { id: 'cl011', name: "Cl\u00ednica Viva Mais", value: '1200', hours: '0', notes: '' },
-  { id: 'cl012', name: "Sunset +", value: '2000', hours: '0', notes: '' },
+  { id: 'cl012', name: "Sunset", value: '2000', hours: '0', notes: '' },
   { id: 'cl013', name: "Hobbi Tintas", value: '900', hours: '0', notes: '' },
   { id: 'cl014', name: "Paddock Racing", value: '700', hours: '0', notes: '' },
   { id: 'cl015', name: "Bui\u00fa Ve\u00edculos", value: '1200', hours: '0', notes: '' },
@@ -49,7 +49,7 @@ function seedDemoData() {
   { id: 'cl047', name: "Cl\u00ednica Vital", value: '2300', hours: '0', notes: '' },
   { id: 'cl048', name: "Zap Petiscaria", value: '500', hours: '0', notes: '' },
   { id: 'cl049', name: "Erva Mate Vargem Grande", value: '800', hours: '0', notes: '' },
-  { id: 'cl050', name: "100B", value: '1000', hours: '0', notes: '' },
+  { id: 'cl050', name: "1000B", value: '1000', hours: '0', notes: '' },
   { id: 'cl051', name: "Novacki Madeiras", value: '900', hours: '0', notes: '' },
   { id: 'cl052', name: "Novacki Fazenda", value: '900', hours: '0', notes: '' },
   { id: 'cl053', name: "Vogel Incorporadora", value: '1300', hours: '0', notes: '' },
